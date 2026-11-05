@@ -5,11 +5,7 @@ edition = "2024"
 
 [dependencies]
 gtk = "0.18"
-dbus = "0.9"
-niri-ipc = "25"
 anyhow = "1.0"
-nmrs = "3"
-tokio = { version = "1", features = ["full"] }
 gtk-layer-shell = "0.7"
 gio = "0.18"
 pollster = "0.4.0"
