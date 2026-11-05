@@ -1,6 +1,6 @@
 # Barricade Wallpaper
 
-Rust application for setting desktop wallpapers with Wayland and GTK Layer Shell support.
+Rust application for setting desktop wallpapers with Wayland and GTK 3 Layer Shell support.
 
 ## Description
 
@@ -11,7 +11,7 @@ Barricade Wallpaper is a lightweight application that displays an image fullscre
 ## Features
 
 - Set wallpaper via command line
-- Wayland support through GTK Layer Shell
+- Wayland support through GTK 3 Layer Shell
 - Automatic image scaling to fit screen size
 - Simple CLI interface
 
@@ -22,6 +22,16 @@ Barricade Wallpaper is a lightweight application that displays an image fullscre
 - Rust 1.74+ (edition 2024)
 - GTK 3.x
 - GTK Layer Shell 0.7+
+
+### Nix Users
+
+This project includes a `shell.nix` for reproducible development environment:
+
+```bash
+nix-shell
+```
+
+The shell provides all dependencies: GTK 3, cairo, pango, gdk-pixbuf, and build tools.
 
 ### Build
 
