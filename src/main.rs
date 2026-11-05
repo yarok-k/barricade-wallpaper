@@ -66,11 +66,13 @@ fn create_window(app: &Application, path: Option<&str>) -> Result<Ui, Box<dyn st
         .build();
 
     gtk_layer_shell::init_for_window(&win);
+    gtk_layer_shell::set_namespace(&win, "wallpaper");
     gtk_layer_shell::set_layer(&win, gtk_layer_shell::Layer::Background);
     gtk_layer_shell::set_anchor(&win, gtk_layer_shell::Edge::Top, true);
     gtk_layer_shell::set_anchor(&win, gtk_layer_shell::Edge::Right, true);
     gtk_layer_shell::set_anchor(&win, gtk_layer_shell::Edge::Left, true);
     gtk_layer_shell::set_anchor(&win, gtk_layer_shell::Edge::Bottom, true);
+    gtk_layer_shell::set_exclusive_zone(&win, -1);
     gtk_layer_shell::set_keyboard_interactivity(&win, false);
 
     let ui = Ui::new(&win, app, path)?;
