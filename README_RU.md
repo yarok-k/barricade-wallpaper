@@ -55,6 +55,21 @@ cargo run -- --file /path/to/image.jpg
 
 Если приложение уже запущено, оно просто заменит текущие обои на указанные.
 
+### для niri
+
+рекомендуется внести следущие изменения в cinfig.kdl для правильного отображения обоев в режиме overview
+
+```kdl
+layout {
+    background-color "transparent"
+{
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+```
+
 ## Структура проекта
 
 ```
