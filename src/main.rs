@@ -11,7 +11,7 @@ mod ui;
 #[derive(Default)]
 struct Wallpapers {
     started: bool,
-    path: Option<String>, // последняя обоина, чтобы новые мониторы получали её же
+    path: Option<String>,
     items: Vec<(gdk::Monitor, ApplicationWindow, Ui)>,
 }
 
@@ -110,7 +110,7 @@ fn create_window(
         .build();
 
     gtk_layer_shell::init_for_window(&win);
-    gtk_layer_shell::set_monitor(&win, monitor); // <-- главное отличие
+    gtk_layer_shell::set_monitor(&win, monitor);
     gtk_layer_shell::set_namespace(&win, "wallpaper");
     gtk_layer_shell::set_layer(&win, gtk_layer_shell::Layer::Background);
     for edge in [
